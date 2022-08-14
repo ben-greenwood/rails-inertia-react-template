@@ -1,0 +1,17 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "include": ["./app/frontend/**/*"],
+  "compilerOptions": {
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "paths": {
+      "@/components/*": ["./app/frontend/components/*"],
+      "@/Layouts//*": ["./app/frontend/Layouts/*"]
+    }
+  }
+}
