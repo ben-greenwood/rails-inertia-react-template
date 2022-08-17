@@ -63,6 +63,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'lefthook'
   gem "brakeman"
+  gem 'faker'
 end
 
 group :development do
