@@ -1,14 +1,26 @@
 # Rails Template
 
-Whenever I find myself excited about a new idea, I get to the point of creating a new app and all of a sudden I find that the configuration has killed my excitment. I just wanted to start building, not deciding which version of rails to use and whether it should do this or do that
+Oh whats that? A new app idea?
+
+This is a template to help you get started on your new app v quickly.
+
+With authentication provided out-of-the-box, you can focus on building and creating rather than configuring a new app.
 
 The Stack:
 
 - Rails 7
 - Vite Ruby instead of Webpacker.
-- React
+- React (typescript)
 - InertiaJS
 - Cuprite for driving headless-Chrome
+- Devise for authentication
+
+### Development
+
+- Fork the repo and install the gems w/ `bundle`
+- Create and seed the DB w/ `rails db:reset`
+- Start the server w/ `rails s`
+- Have fun!
 
 ### Rubocop
 
