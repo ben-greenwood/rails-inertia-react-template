@@ -10,6 +10,8 @@ AllCops:
     - "db/**/*"
     - "script/**/*"
     - "bin/**/*"
+    - "config/**/*"
+    - "Gemfile"
 
 Metrics/BlockLength:
   Exclude:

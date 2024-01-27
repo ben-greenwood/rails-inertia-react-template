@@ -28,7 +28,8 @@ class Accounts::RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       set_minimum_password_length
-      redirect_back fallback_location: new_account_registration_path, inertia: { errors: resource.errors }
+      redirect_back fallback_location: new_account_registration_path,
+                    inertia: { errors: resource.errors }
     end
   end
 
