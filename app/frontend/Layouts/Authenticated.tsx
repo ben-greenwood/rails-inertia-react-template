@@ -1,16 +1,19 @@
 import * as React from "react"
 
-import FlashMessages from "@/components/FlashMessages"
+import { Toaster } from "sonner"
+import useFlash from "@/hooks/useFlash"
 
 export default function Authenticated({
   children,
 }: {
   children: React.ReactNode
 }) {
+  useFlash()
+
   return (
     <div className="min-h-screen">
-      <FlashMessages />
       <div>{children}</div>
+      <Toaster />
     </div>
   )
 }

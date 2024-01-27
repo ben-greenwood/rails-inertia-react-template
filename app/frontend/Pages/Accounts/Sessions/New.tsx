@@ -3,8 +3,10 @@ import * as React from "react"
 import { Link, useForm } from "@inertiajs/react"
 import { account_session_path, new_account_registration_path } from "@/routes"
 
-import FlashMessages from "@/components/FlashMessages"
-import Input from "@/components/Input"
+import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import Unauthenticated from "@/layouts/Unauthenticated"
 
 export default function New() {
@@ -25,7 +27,6 @@ export default function New() {
   return (
     <Unauthenticated>
       <>
-        <FlashMessages />
         <div>
           <h2>Sign in</h2>
           <p>
@@ -35,29 +36,34 @@ export default function New() {
           </p>
         </div>
         <form onSubmit={submit}>
-          <Input
-            label="Email Address"
-            value={data.email}
-            onChange={(e) => setData("email", e.target.value)}
-            type="email"
-            name="email"
-            id="email"
-          />
-          <Input
-            label="Password"
-            value={data.password}
-            onChange={(e) => setData("password", e.target.value)}
-            type="password"
-            name="password"
-            id="password"
-          />
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="email">Email Address</Label>
+            <Input
+              value={data.email}
+              onChange={(e) => setData("email", e.target.value)}
+              type="email"
+              name="email"
+              id="email"
+            />
+          </div>
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="password">Password</Label>
+            <Input
+              value={data.password}
+              onChange={(e) => setData("password", e.target.value)}
+              type="password"
+              name="password"
+              id="password"
+            />
+          </div>
           <div>
             <div>
-              <input
+              <Checkbox
                 value={data.remember_me.toString()}
-                onChange={(e) => setData("remember_me", e.target.checked)}
-                type="checkbox"
                 id="remember"
+                onCheckedChange={(checked) =>
+                  setData("remember_me", Boolean(checked))
+                }
               />
               <label htmlFor="remember">Remember Me</label>
             </div>
@@ -65,9 +71,9 @@ export default function New() {
               <a href="/">Forgot your Password?</a>
             </div>
           </div>
-          <button type="submit" disabled={processing}>
+          <Button type="submit" disabled={processing}>
             Sign in
-          </button>
+          </Button>
         </form>
       </>
     </Unauthenticated>

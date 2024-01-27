@@ -3,8 +3,10 @@ import * as React from "react"
 import { Link, useForm } from "@inertiajs/react"
 import { account_registration_path, new_account_session_path } from "@/routes"
 
-import FlashMessages from "@/components/FlashMessages"
-import Input from "@/components/Input"
+import { Button } from "@/components/ui/button"
+import { FormField } from "@/components/ui/form_field"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import Unauthenticated from "@/layouts/Unauthenticated"
 
 export default function New() {
@@ -26,7 +28,6 @@ export default function New() {
   return (
     <Unauthenticated>
       <>
-        <FlashMessages />
         <div>
           <h2>Create an account.</h2>
           <p>
@@ -35,47 +36,66 @@ export default function New() {
           </p>
         </div>
         <form onSubmit={submit}>
-          <Input
-            label="Name"
-            value={data.name}
-            onChange={(e) => setData("name", e.target.value)}
-            type="text"
-            name="name"
-            id="name"
-            errors={errors.name}
-          />
-          <Input
-            label="Email Address"
-            value={data.email}
-            onChange={(e) => setData("email", e.target.value)}
-            type="email"
-            name="email"
-            id="email"
-            errors={errors.email}
-          />
-          <Input
-            label="Password"
-            value={data.password}
-            onChange={(e) => setData("password", e.target.value)}
-            type="password"
-            name="password"
-            id="password"
-            errors={errors.password}
-          />
+          <FormField
+            className="grid w-full max-w-sm items-center gap-1.5"
+            error={errors.name}
+          >
+            <Label htmlFor="name">Full Name</Label>
+            <Input
+              value={data.name}
+              onChange={(e) => setData("name", e.target.value)}
+              type="text"
+              name="name"
+              id="name"
+            />
+          </FormField>
 
-          <Input
-            label="Confirm password"
-            value={data.password_confirmation}
-            onChange={(e) => setData("password_confirmation", e.target.value)}
-            type="password"
-            name="password_confirmation"
-            id="password_confirmation"
-            errors={errors.password_confirmation}
-          />
+          <FormField
+            className="grid w-full max-w-sm items-center gap-1.5"
+            error={errors.email}
+          >
+            <Label htmlFor="email">Email Address</Label>
+            <Input
+              value={data.email}
+              onChange={(e) => setData("email", e.target.value)}
+              type="email"
+              name="email"
+              id="email"
+            />
+          </FormField>
 
-          <button type="submit" disabled={processing}>
+          <FormField
+            className="grid w-full max-w-sm items-center gap-1.5"
+            error={errors.password}
+          >
+            <Label htmlFor="password">Password</Label>
+            <Input
+              value={data.password}
+              onChange={(e) => setData("password", e.target.value)}
+              type="password"
+              name="password"
+              id="password"
+            />
+          </FormField>
+
+          <FormField
+            className="grid w-full max-w-sm items-center gap-1.5"
+            error={errors.password_confirmation}
+          >
+            <Label htmlFor="password_confirmation">Confirm password</Label>
+
+            <Input
+              value={data.password_confirmation}
+              onChange={(e) => setData("password_confirmation", e.target.value)}
+              type="password"
+              name="password_confirmation"
+              id="password_confirmation"
+            />
+          </FormField>
+
+          <Button type="submit" disabled={processing}>
             Sign up
-          </button>
+          </Button>
         </form>
       </>
     </Unauthenticated>
