@@ -11,7 +11,7 @@ So, what's under the hood?
 - Rails 7, because we always like to stay on the cutting edge of things!
 - Vite Ruby instead of Webpacker, because let's face it, life is too short to deal with slow build times.
 - React (with TypeScript), because who doesn't love a little type safety in their life?
-- InertiaJS, because we like to keep things snappy and responsive.
+- InertiaJS, because it blends modern frontends with server-driven apps - pure magic!
 - Cuprite for driving headless Chrome, because we're fancy like that.
 - Devise for authentication, because why reinvent the wheel?
 
@@ -24,10 +24,20 @@ So, what's under the hood?
 - Start Vite w/ `vite dev`
 - View the app at `localhost:3000`
 
-### Rubocop
+### Rubocop / ESLint
 
-Now, we know that nobody likes a messy codebase, which is why we've included Rubocop in this template. But don't worry, we're not here to judge - we know that sometimes you just gotta get things done!
+Now, we know that nobody likes a messy codebase, which is why we've included Rubocop & ESLint in this template. But don't worry, we're not here to judge - we know that sometimes you just gotta get things done!
+
+#### Rubocop
 
 - Run `bundle exec rubocop --auto-gen-config` to generate a todo list of existing exceptions
 - Run `rubocop -a` to autocorrect offenses
 - Run `rubocop -x` to fix layout issues
+
+#### ESLint
+
+- Run `yarn lint` to lint the JS files
+
+### Testing
+
+- Run `bundle exec rspec` to run the Rails tests
