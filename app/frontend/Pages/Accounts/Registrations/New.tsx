@@ -1,11 +1,11 @@
 import * as React from "react"
 
-import { Link, useForm } from "@inertiajs/inertia-react"
+import { Link, useForm } from "@inertiajs/react"
 import { account_registration_path, new_account_session_path } from "@/routes"
 
 import FlashMessages from "@/components/FlashMessages"
 import Input from "@/components/Input"
-import Unauthenticated from "@/Layouts/Unauthenticated"
+import Unauthenticated from "@/layouts/Unauthenticated"
 
 export default function New() {
   const { data, setData, post, processing, errors, transform } = useForm({
@@ -15,7 +15,7 @@ export default function New() {
     password_confirmation: "",
   })
 
-  function submit(e) {
+  function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     transform(() => ({
       account: { ...data },

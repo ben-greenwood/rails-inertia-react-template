@@ -1,3 +1,5 @@
+import * as React from "react"
+
 import FlashMessages from "@/components/FlashMessages"
 
 export default function Authenticated({

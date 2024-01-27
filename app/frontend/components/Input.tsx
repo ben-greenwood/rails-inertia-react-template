@@ -1,15 +1,13 @@
-import React, { HTMLInputTypeAttribute } from "react"
+import { HTMLInputTypeAttribute } from "react"
 
-import cx from "classnames"
-
-interface Input {
+interface InputProps {
   value: string | number
-  onChange: () => void
+  onChange: (e: any) => void
   label: string
   type: HTMLInputTypeAttribute
   name: string
   id: string
-  errors: [] | [string]
+  errors: string | [] | [string]
 }
 
 export default function Input({
@@ -21,14 +19,10 @@ export default function Input({
   id,
   errors = [],
   ...rest
-}: Input) {
+}: InputProps) {
   return (
     <div>
-      <div
-        className={cx(
-          errors.length > 0 && "border-red-300 focus-within:border-red-400"
-        )}
-      >
+      <div>
         <label htmlFor={id}>{label}</label>
         <input
           value={value}
@@ -39,11 +33,7 @@ export default function Input({
           {...rest}
         />
       </div>
-      {errors && (
-        <p className="mt-2 text-xs text-red-500" id={`${id}-error`}>
-          {errors[0]}
-        </p>
-      )}
+      {errors && <p id={`${id}-error`}>{errors[0]}</p>}
     </div>
   )
 }

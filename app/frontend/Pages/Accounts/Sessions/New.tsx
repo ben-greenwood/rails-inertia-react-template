@@ -1,11 +1,11 @@
 import * as React from "react"
 
-import { Link, useForm } from "@inertiajs/inertia-react"
+import { Link, useForm } from "@inertiajs/react"
 import { account_session_path, new_account_registration_path } from "@/routes"
 
 import FlashMessages from "@/components/FlashMessages"
 import Input from "@/components/Input"
-import Unauthenticated from "@/Layouts/Unauthenticated"
+import Unauthenticated from "@/layouts/Unauthenticated"
 
 export default function New() {
   const { data, setData, post, processing, transform } = useForm({
@@ -54,7 +54,7 @@ export default function New() {
           <div>
             <div>
               <input
-                value={data.remember_me}
+                value={data.remember_me.toString()}
                 onChange={(e) => setData("remember_me", e.target.checked)}
                 type="checkbox"
                 id="remember"

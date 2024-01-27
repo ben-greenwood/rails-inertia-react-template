@@ -21,6 +21,7 @@ So, what's under the hood?
 - Install the JS dependencies w/ `yarn`
 - Create and seed the DB w/ `rails db:reset`
 - Start the server w/ `rails s`
+- Start Vite w/ `vite dev`
 - View the app at `localhost:3000`
 
 ### Rubocop

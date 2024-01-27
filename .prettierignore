@@ -1,0 +1,8 @@
+/app/frontend/routes.d.ts
+db/schema.rb
+tsconfig.json
+public/*
+public/*
+.gitignore
+/app/frontend/routes.js
+/app/frontend/types

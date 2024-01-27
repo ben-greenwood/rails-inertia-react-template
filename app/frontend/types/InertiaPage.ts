@@ -1,7 +1,7 @@
-import type { Page, PageProps, Errors, ErrorBag } from "@inertiajs/inertia"
+import type { ErrorBag, Errors, Page, PageProps } from "@inertiajs/core"
 
-declare global {
-  interface InteriaPage extends Page<PageProps> {
+export interface InteriaPage extends Page<PageProps> {
+  [key: string]: any
     props: {
       flash: {
         success: boolean
@@ -17,4 +17,4 @@ declare global {
       }
     }
   }
-}
+

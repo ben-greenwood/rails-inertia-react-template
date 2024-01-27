@@ -1,7 +1,7 @@
 import * as React from "react"
 
-import { Link } from "@inertiajs/inertia-react"
-import Authenticated from "@/Layouts/Authenticated"
+import Authenticated from "@/layouts/Authenticated"
+import { Link } from "@inertiajs/react"
 import { destroy_account_session_path } from "@/routes"
 
 export default function Index() {

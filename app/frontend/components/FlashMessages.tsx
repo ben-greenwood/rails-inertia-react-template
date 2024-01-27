@@ -1,5 +1,5 @@
-import React from "react"
-import { usePage } from "@inertiajs/inertia-react"
+import { InteriaPage } from "@/types/InertiaPage"
+import { usePage } from "@inertiajs/react"
 
 export default function FlashMessages() {
   const { flash } = usePage<InteriaPage>().props
